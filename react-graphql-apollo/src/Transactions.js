@@ -1,8 +1,7 @@
-// src/Transactions.js
+
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-// Requête GraphQL pour obtenir toutes les transactions
 const GET_TRANSACTIONS = gql`
   query {
     transactionsByCompteId(compteId: 1) {  // Modifiez selon l'ID du compte ou récupérez dynamiquement

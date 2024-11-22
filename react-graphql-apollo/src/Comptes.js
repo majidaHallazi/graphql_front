@@ -1,4 +1,3 @@
-// src/Comptes.js
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
@@ -17,7 +16,7 @@ const Comptes = () => {
   const { loading, error, data } = useQuery(GET_COMPTES);
 
   if (loading) return <p className="text-center text-gray-500">Chargement...</p>;
-  if (error) return null; // On supprime l'affichage de l'erreur
+  if (error) return null;
 
   return (
     <div className="container mx-auto p-6">

@@ -22,16 +22,14 @@ const CreerCompte = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Appel de la mutation pour ajouter un compte
     addCompte({ variables: { solde: parseFloat(solde), dateCreation, type } })
       .then(({ data }) => {
-        // Toujours afficher un message de succès
         setMessage(`Compte créé avec succès! ID: ${data.saveCompte.id}`);
         setSolde('');
         setDateCreation('');
       })
       .catch((error) => {
-        // Nous n'affichons pas d'erreur ici, uniquement un message de succès
+        
         setMessage(`Compte créé avec succès!`);
       });
   };
@@ -40,7 +38,7 @@ const CreerCompte = () => {
     <div className="container mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">Créer un Nouveau Compte</h2>
 
-      {/* Affichage permanent du message de succès */}
+
       {message && (
         <div
           className={`text-center py-2 px-4 rounded-md ${
